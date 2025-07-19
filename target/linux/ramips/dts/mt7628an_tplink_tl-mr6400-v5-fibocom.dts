@@ -1,0 +1,31 @@
+// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+#include "mt7628an_tplink_8m.dtsi"
+
+/ {
+    compatible = "tplink,tl-mr6400-v5", "mediatek,mt7628an-soc";
+    model = "TP-Link TL-MR6400 v5 with Fibocom L716";
+
+    gpio-keys {
+        modem-reset {
+            label = "modem_reset";
+            gpios = <&gpio 37 GPIO_ACTIVE_LOW>;
+            linux,code = <KEY_RESTART>;
+        };
+    };
+};
+
+&usb_phy {
+    status = "okay";
+};
+
+&ehci {
+    status = "okay";
+};
+
+&ohci {
+    status = "okay";
+};
+
+&esw {
+    mediatek,portmap = <0x3e>;
+};

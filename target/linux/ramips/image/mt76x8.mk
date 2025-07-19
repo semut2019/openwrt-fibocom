@@ -956,3 +956,13 @@ define Device/zyxel_keenetic-extra-ii
 	check-size | zyimage -d 6162 -v "ZyXEL Keenetic Extra II"
 endef
 TARGET_DEVICES += zyxel_keenetic-extra-ii
+
+define Device/tplink_tl-mr6400-v5-fibocom
+  $(Device/tplink-8mlzma)
+  IMAGE_SIZE := 7872k
+  DEVICE_MODEL := TL-MR6400
+  DEVICE_VARIANT := v5 Fibocom Edition
+  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci kmod-usb-net-qmi-wwan uqmi
+endef
+TARGET_DEVICES += tplink_tl-mr6400-v5-fibocom
+
