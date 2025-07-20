@@ -1,0 +1,8 @@
+--- a/drivers/usb/serial/option.c
++++ b/drivers/usb/serial/option.c
+@@ -2133,6 +2133,8 @@
+ 	{ USB_DEVICE(0x2cb7, 0x0001) }, /* Fibocom L716 */
+ 	{ USB_DEVICE(0x2cb7, 0x0104) }, /* Fibocom NL668 */
+ 	{ USB_DEVICE(0x2cb7, 0x0105) }, /* Fibocom NL678 */
++	{ USB_DEVICE_INTERFACE_CLASS(0x2cb7, 0x0001, 0xff) }, /* QMI mode */
++	{ USB_DEVICE_INTERFACE_CLASS(0x2cb7, 0x0001, 0xfe) }, /* AT command mode */
