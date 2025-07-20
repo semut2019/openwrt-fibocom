@@ -21,4 +21,23 @@
         compatible = "fibocom,l716";
         status = "okay";
     };
+&usb1 {
+	status = "okay";
+
+	modem@1 {
+		compatible = "usb,2cb7,0001";
+		reg = <1>;
+		power-gpios = <&gpio 11 GPIO_ACTIVE_HIGH>;
+		reset-gpios = <&gpio 37 GPIO_ACTIVE_LOW>;
+	};
+};
+
+&gpio {
+	modem_power {
+		gpio-hog;
+		gpios = <11 GPIO_ACTIVE_HIGH>;
+		output-high;
+		line-name = "modem-power";
+	};
+};
 };
